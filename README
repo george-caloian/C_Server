@@ -1,0 +1,56 @@
+George Caloian 322CC
+Tema 1 - "Let's play a game" - Protocoale de Comunicatie
+
+Parere Personala :
+In principiu tema mi-a pus destul de multe probleme si 
+a fost nevoie sa acord un timp destul de mare rezolvarii 
+acesteia deoarece m-am impiedicat de foarte multe ori de
+situatii in care pur si simplu nu intelegeam sursa abaterilor
+facute de client de la comportamentul pe care ma asteptam eu 
+sa il aibe (adica cum am inteles eu functionalitatea ) la 
+fiecare pas. Dar in acelasi timp nu exclud 
+existenta lipsurilor mele atunci cand vine vorba de codat 
+si nu numai, in sensul ca sunt constient ca pur si simplu 
+nu am fost suficient de abil in anumite situati incat sa 
+inteleg exact de unde vine problema.
+Consider ca din punct de vedere ideologic tema a avut o
+dificultate adecvata in special datorita faptului ca a fost
+strcuturata pe 4 "nivele de dificultate" lucru extrem de 
+benefic din punctul meu de vedere.
+
+
+Scurta trecere in revista a celor 3 moduri implementate:
+
+Modul simplu
+
+Ascultand clientul am constatat ca prima parte a conversatiei 
+si anume pana la momentul in care incepe jocul
+are o structura fixa.
+Asadar am asteptat fiecare mesaj si m-am folosit de indicele
+pasului curent pentru a indica serverului ce actiune sa 
+indeplineasca la fiecare pas ( i=0,1,2..etc)
+Pentru a afla numarul am folosit cautarea binara, mai exact 
+de fiecare daca cand clientul ma ghideaza spunandu-mi ca
+numarul respectiv este mai mic/mare decat numarul meu
+restrang aria de cautare actualizand capetele intervalului.
+
+Modul ACK
+
+Practic avem de-a face cu o situatie absolut similara cu cea 
+de la primul punct cu exeptia mesajelor de confirmare (ACK)
+trimise atat de client cat si de server.
+Diferentele de care a trebui sa tin cont au fost acelea de 
+structura a "discutiei" si anume adaptarea indicilor.
+
+Modul Parity
+
+Rezolvarea acestui subpunct a constituit mare parte a timpului
+de rezolvare a temei.
+In primul rand evident am abandonat abordarea secventiala cu
+ajutorul indicilor deoarece nu puteam sti dinainte ce mesaje si
+de cate ori vor fi corupte fiecare.
+Am trecut efectiv la analiza mesajelor cautand cuvinte cheie 
+si abea atunci cand le intalnesc sa execut comanda ceruta.
+Principala dificultate a acestui subpunct a constituit-o 
+formatul numerelor si calculul paritatii acestora.
+
